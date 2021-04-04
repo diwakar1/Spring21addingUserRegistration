@@ -6,41 +6,41 @@
 </head>
 <body>
 <h4>New User Registration</h4>
-<form onautocomplete="onoffline" action="#" th:action="@{/registration}" th:object="${user}" method="post">
+<form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
     First Name
     <mark><strong>
                     <span th:if="${#fields.hasErrors('firstName')}"
-                          th:onerror="*{firstName}"> First Name Error</span>
+                          th:errors="*{firstName}"> First Name Error</span>
     </strong></mark>
-    <input type="text" id="firstName" placeholder="First Name" th:field="*{firstName}">
+    <input type="text" id="firstName" placeholder="First Name" th:field="*{firstName}"></br></br>
     Last Name
     <mark><strong>
                     <span th:if="${#fields.hasErrors('lastName')}"
-                          th:onerror="*{lastName}"> First Name Error</span>
+                          th:errors="*{lastName}"> First Name Error</span>
     </strong></mark>
-    <input type="text" id="lastName" placeholder="Last Name" th:field="*{lastName}"/><br/>
+    <input type="text" id="lastName" placeholder="Last Name" th:field="*{lastName}"/></br></br>
 
 
     Email
     <mark><strong>
                     <span th:if="${#fields.hasErrors('email')}"
-                           th:onerror="*{email}">Email Error</span>
+                           th:errors="*{email}">Email Error</span>
     </strong></mark>
-    <input th:type="text" id="email" placeholder="Email" th:field="*{email}"/><br/>
+    <input th:type="text" id="email" placeholder="Email" th:field="*{email}"/></br></br>
 
     UserName
     <mark><String>
                     <span th:if="${#fields.hasErrors('userName')}"
-                           th:onerror="*{userName}"> User Name Error</span>
+                           th:errors="*{userName}"> User Name Error</span>
     </String></mark>
-    <input type="text" id="userName" placeholder="User Name" th:field="*{userName}"/><br/>
+    <input type="text" id="userName" placeholder="User Name" th:field="*{userName}"/></br></br>
 
     Password
     <mark><String>
                     <span th:if="${#fields.hasErrors('password')}"
-                          th:onerror="*{password}"> User Name Error</span>
+                          th:errors="*{password}"> User Name Error</span>
     </String></mark>
-    <input type="text" id="password" placeholder="Password" th:field="*{password}"/><br/>
+    <input type="password" id="password" placeholder="Password" th:field="*{password}"/></br></br>
      <button type="submit" class="btn btn default"> Submit</button>
 
 </form>
